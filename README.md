@@ -10,3 +10,13 @@ npm run dev
 ```
 
 Luego abrir `http://localhost:3000`.
+
+## Google Analytics
+
+Crear un archivo `.env.local` con el ID de medicion de Google Analytics:
+
+```bash
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
+
+En produccion, configurar la misma variable de entorno en el hosting.
