@@ -1,0 +1,19 @@
+<svg width="520" height="260" viewBox="0 0 520 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="520" height="260" fill="white"/>
+  <g transform="translate(118 56)">
+    <rect x="61" y="0" width="16" height="16" rx="3" fill="#FFB13B"/>
+    <rect x="40" y="24" width="16" height="16" rx="3" fill="#8A4FD8"/>
+    <rect x="63" y="25" width="16" height="16" rx="3" fill="#34C36B"/>
+    <rect x="48" y="48" width="16" height="16" rx="3" fill="#2A80D7"/>
+
+    <path
+      d="M28.9 62.4C33.4 57.6 42 60.8 41.8 67.4L41.1 94.8C41 99.4 37.3 103.1 32.7 103.3L23.5 103.7L12.7 129.3C11.5 132.1 13.6 135.2 16.7 135.2H61.2C65.1 135.2 68.6 132.8 70 129.2L94.1 68.2C96.4 62.4 91.4 56.4 85.3 57.6L65 61.8C61.8 62.5 59.3 64.7 58.1 67.7L52.2 82.7L38.9 67.5C36.6 64.8 32.5 64.7 29.9 67.2L18.1 78.7C15.6 81.2 15.1 85 16.9 88L25.5 102.3L31.9 88.1L27.4 80.6C26.5 79.2 26.8 77.4 28 76.3L37.4 67.1L56.8 89.4C60 93.1 66 91.9 67.5 87.2L72.1 72.8L84.7 70.2L63.3 124.5H27.8L34.2 109.4C46.4 107.6 55.8 97 56.1 84.3L56.7 60.4C57 47.8 40.7 42.4 32.1 51.6L8.3 77C2.9 82.7 1.1 90.9 3.5 98.4L14.8 134.4H0L-16.4 101.1C-21 91.7 -19.4 80.4 -12.2 72.8L28.9 62.4Z"
+      fill="#243238"
+    />
+
+    <g transform="translate(112 61)">
+      <text x="0" y="31" font-family="Inter, Arial, sans-serif" font-size="43" font-weight="800" fill="#253238">Juntando</text>
+      <text x="0" y="78" font-family="Inter, Arial, sans-serif" font-size="49" font-weight="800" fill="#1E7EDB">Pixels</text>
+    </g>
+  </g>
+</svg>
