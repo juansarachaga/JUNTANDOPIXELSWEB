@@ -2,13 +2,29 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
 
+const siteUrl = "https://juntandopixels.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Juntando Pixels | Desarrollo web, eCommerce y soluciones digitales",
+  metadataBase: new URL(siteUrl),
+  title:
+    "Desarrollo web en La Plata, Buenos Aires | Juntando Pixels",
   description:
-    "Creamos sitios web, tiendas online, soluciones digitales y contenido visual para empresas, comercios y profesionales. Desarrollo desde La Plata, Argentina.",
+    "Desarrollo web, programacion, tiendas online y soluciones digitales en La Plata, Buenos Aires. Creamos sitios rapidos, profesionales y listos para crecer.",
   keywords: [
     "Juntando Pixels",
+    "JuntandoPixels",
+    "juntando pixels",
+    "juntando pixeles",
+    "desarrollo web La Plata",
+    "desarrollo web la plata buenos aires",
+    "programacion La Plata Buenos Aires",
+    "programacion la plata buenos aires",
+    "programador web La Plata",
+    "desarrollador web La Plata",
+    "paginas web La Plata",
+    "sitios web La Plata",
     "desarrollo web",
+    "programacion",
     "eCommerce",
     "tiendas online",
     "software a medida",
@@ -22,12 +38,22 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Juan Pablo Saráchaga" }],
   creator: "Juan Pablo Saráchaga",
+  alternates: {
+    canonical: "/"
+  },
   openGraph: {
-    title: "Juntando Pixels",
+    title:
+      "Juntando Pixels | Desarrollo web en La Plata, Buenos Aires",
     description:
-      "Desarrollo web, eCommerce, software y contenido digital.",
+      "Desarrollo web, programacion, eCommerce y soluciones digitales para empresas y profesionales de La Plata, Buenos Aires.",
+    url: siteUrl,
+    siteName: "Juntando Pixels",
     type: "website",
     locale: "es_AR"
+  },
+  robots: {
+    index: true,
+    follow: true
   }
 };
 

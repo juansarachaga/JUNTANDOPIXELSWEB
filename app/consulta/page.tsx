@@ -10,7 +10,14 @@ const email = "juntandopixels@gmail.com";
 export const metadata: Metadata = {
   title: "Consulta de proyecto | Juntando Pixels",
   description:
-    "Formulario de consulta para sitios web, tiendas online, sistemas y soluciones digitales de Juntando Pixels."
+    "Formulario de consulta para desarrollo web, tiendas online, sistemas y soluciones digitales de Juntando Pixels en La Plata, Buenos Aires.",
+  alternates: {
+    canonical: "/consulta"
+  },
+  robots: {
+    index: true,
+    follow: true
+  }
 };
 
 export default function ConsultaPage() {

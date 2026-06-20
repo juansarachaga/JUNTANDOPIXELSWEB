@@ -192,18 +192,50 @@ export default function Home() {
 function JsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     name: "Juntando Pixels",
+    alternateName: [
+      "JuntandoPixels",
+      "juntando pixels",
+      "juntando pixeles"
+    ],
+    url: "https://juntandopixels.vercel.app/",
     email,
     description:
       "Consultora digital de La Plata orientada a desarrollo web, eCommerce, software, diseño, contenido audiovisual, fotografía, drones y soluciones digitales.",
-    areaServed: "La Plata, Argentina",
+    areaServed: [
+      "La Plata",
+      "Buenos Aires",
+      "Argentina"
+    ],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "La Plata",
+      addressRegion: "Buenos Aires",
+      addressCountry: "AR"
+    },
     founder: {
       "@type": "Person",
       name: "Juan Pablo Saráchaga"
     },
+    serviceType: [
+      "Desarrollo web",
+      "Programacion web",
+      "Tiendas online",
+      "eCommerce",
+      "Software a medida",
+      "SEO tecnico"
+    ],
     knowsAbout: [
+      "Juntando Pixels",
+      "JuntandoPixels",
+      "juntando pixels",
+      "juntando pixeles",
       "desarrollo web",
+      "desarrollo web La Plata",
+      "desarrollo web la plata buenos aires",
+      "programacion La Plata Buenos Aires",
+      "programacion la plata buenos aires",
       "eCommerce",
       "software a medida",
       "WordPress",
