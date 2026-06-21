@@ -196,7 +196,7 @@ function JsonLd() {
       "juntando pixels",
       "juntando pixeles"
     ],
-    url: "https://juntandopixels.vercel.app/",
+    url: "https://juntandopixels.com/",
     email,
     description:
       "Consultora digital de La Plata orientada a desarrollo web, eCommerce, software, diseño, contenido audiovisual, fotografía, drones y soluciones digitales.",

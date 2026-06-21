@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
 
-const siteUrl = "https://juntandopixels.vercel.app";
+const siteUrl = "https://juntandopixels.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
