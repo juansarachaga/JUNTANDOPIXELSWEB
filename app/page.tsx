@@ -27,6 +27,7 @@ const projectFormHref = "/consulta";
 const navItems = [
   { label: "Inicio", href: "#inicio" },
   { label: "Qué hacemos", href: "#servicios" },
+  { label: "Aplicaciones", href: "#aplicaciones" },
   { label: "Equipo", href: "#acerca" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Proceso", href: "#proceso" },
@@ -64,6 +65,15 @@ const services = [
     title: "Contenido audiovisual y drones",
     text: "Sumamos fotografía, video y tomas aéreas para marcas que necesitan mostrar productos, espacios, obras o servicios con mayor impacto."
   }
+];
+
+const customProducts = [
+  "Paneles internos para equipos",
+  "Dashboards y reportes",
+  "Portales para clientes",
+  "Gestión de turnos, pedidos o reservas",
+  "Automatización de procesos",
+  "MVPs para validar ideas"
 ];
 
 const featuredProjects = [
@@ -178,6 +188,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Services />
+      <CustomProducts />
       <About />
       <Projects />
       <ProductModules />
@@ -387,6 +398,73 @@ function Services() {
               </article>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CustomProducts() {
+  return (
+    <section className="section customProductsSection" id="aplicaciones">
+      <div className="container customProductsGrid">
+        <div className="customProductsCopy">
+          <p className="sectionKicker">Aplicaciones a medida</p>
+          <h2>Cuando una web no alcanza, diseñamos el producto completo.</h2>
+          <p className="sectionText">
+            Hay ideas que necesitan lógica propia: usuarios, estados, formularios,
+            reportes, permisos, pagos, integraciones o flujos internos. Ahí
+            trabajamos el producto desde la necesidad real hasta una primera
+            versión usable, lista para probar y mejorar.
+          </p>
+          <div className="productChips" aria-label="Ejemplos de productos a medida">
+            {customProducts.map((product) => (
+              <span key={product}>{product}</span>
+            ))}
+          </div>
+          <a className="button primary productCta" href={projectFormHref}>
+            Quiero pensar una app
+            <ArrowRight size={18} aria-hidden="true" />
+          </a>
+        </div>
+
+        <div className="productMockup" aria-label="Ejemplo visual de aplicacion a medida">
+          <div className="mockupTopbar">
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className="mockupContent">
+            <div className="mockupSidebar">
+              <span />
+              <span />
+              <span />
+              <span />
+            </div>
+            <div className="mockupPanel">
+              <div className="mockupHeader">
+                <strong>Producto a medida</strong>
+                <small>v1 lista para validar</small>
+              </div>
+              <div className="mockupStats">
+                <span>Usuarios</span>
+                <span>Pedidos</span>
+                <span>Reportes</span>
+              </div>
+              <div className="mockupChart">
+                <i />
+                <i />
+                <i />
+                <i />
+                <i />
+              </div>
+              <div className="mockupRows">
+                <span />
+                <span />
+                <span />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
