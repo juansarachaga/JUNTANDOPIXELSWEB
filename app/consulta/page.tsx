@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Mail } from "lucide-react";
 import ContactForm from "../ContactForm";
-import logo from "../../logoJuntandoPixels.png";
 
 const email = "juntandopixels@gmail.com";
 
@@ -25,7 +24,12 @@ export default function ConsultaPage() {
     <main className="consultPage">
       <header className="consultHeader">
         <Link href="/" className="consultBrand" aria-label="Volver a Juntando Pixels">
-          <Image src={logo} alt="Juntando Pixels" width={144} height={72} />
+          <Image
+            src="/juntando-pixels-logo-clean.png"
+            alt="Juntando Pixels"
+            width={172}
+            height={100}
+          />
         </Link>
         <div className="consultHeaderActions">
           <Link className="button secondaryDark" href="/">

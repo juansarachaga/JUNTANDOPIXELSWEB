@@ -6,7 +6,6 @@ import {
   Code2,
   Cpu,
   ExternalLink,
-  Handshake,
   Mail,
   MapPin,
   Menu,
@@ -20,8 +19,6 @@ import {
   Sparkles,
   Wrench
 } from "lucide-react";
-import logo from "../logoJuntandoPixels.png";
-import profilePhoto from "../perfil.png";
 
 const email = "juntandopixels@gmail.com";
 const contactHref = `mailto:${email}`;
@@ -30,7 +27,7 @@ const projectFormHref = "/consulta";
 const navItems = [
   { label: "Inicio", href: "#inicio" },
   { label: "Qué hacemos", href: "#servicios" },
-  { label: "Acerca de mí", href: "#acerca" },
+  { label: "Equipo", href: "#acerca" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Proceso", href: "#proceso" },
   { label: "Contacto", href: "#contacto" }
@@ -258,7 +255,13 @@ function Header() {
   return (
     <header className="siteHeader">
       <a className="brand" href="#inicio" aria-label="Juntando Pixels">
-        <Image src={logo} alt="" width={150} height={75} className="brandLogo" />
+        <Image
+          src="/juntando-pixels-logo-clean.png"
+          alt=""
+          width={172}
+          height={100}
+          className="brandLogo"
+        />
       </a>
 
       <nav className="desktopNav" aria-label="Navegación principal">
@@ -302,12 +305,12 @@ function Hero() {
 
       <div className="container heroGrid">
         <div className="heroCopy">
-          <p className="eyebrow">La Plata · desarrollo, eCommerce y contenido</p>
-          <h1>Sitios, tiendas y soluciones digitales reales</h1>
+          <p className="eyebrow">La Plata · web, marca y contenido</p>
+          <h1>Presencia digital clara para marcas que quieren crecer</h1>
           <p className="heroLead">
-            En Juntando Pixels desarrollamos productos digitales para empresas,
-            comercios y profesionales: webs institucionales, eCommerce,
-            optimizaciones técnicas, contenido visual y soluciones a medida.
+            Creamos experiencias online que combinan desarrollo, diseño y
+            producción visual para que tu negocio se vea profesional, cargue
+            rápido y convierta mejor.
           </p>
           <div className="heroActions">
             <a className="button primary" href={projectFormHref}>
@@ -323,9 +326,11 @@ function Hero() {
 
         <div className="heroVisual" aria-label="Identidad visual de Juntando Pixels">
           <Image
-            src={logo}
+            src="/juntando-pixels-logo-clean.png"
             alt="Juntando Pixels"
             priority
+            width={1223}
+            height={710}
             sizes="(max-width: 900px) 86vw, 520px"
             className="heroLogo"
           />
@@ -353,10 +358,11 @@ function Services() {
       <div className="container">
         <div className="sectionHeader">
           <p className="sectionKicker">Qué hacemos</p>
-          <h2>Productos digitales concretos, pensados para necesidades reales.</h2>
+          <h2>Elegimos la herramienta correcta para cada objetivo.</h2>
           <p>
-            No vendemos una única receta. Elegimos la pieza correcta según el
-            problema: presencia digital, tienda, sistema, optimización o contenido.
+            Una marca puede necesitar vender, mostrar trayectoria, ordenar
+            consultas o mejorar un sitio existente. Partimos de esa necesidad y
+            armamos una solución posible de mantener.
           </p>
         </div>
         <div className="serviceGrid">
@@ -382,42 +388,61 @@ function About() {
   return (
     <section className="section aboutSection" id="acerca">
       <div className="container aboutGrid">
-        <div className="aboutPhotoWrap">
-          <Image
-            src={profilePhoto}
-            alt="Juan Pablo Saráchaga"
-            width={760}
-            height={760}
-            sizes="(max-width: 720px) calc(100vw - 56px), 420px"
-            className="aboutPhoto"
-          />
-          <div className="aboutBadge">
-            <Code2 size={18} aria-hidden="true" />
-            Desarrollo web
+        <div className="aboutTeamVisual" aria-label="Equipo de Juntando Pixels">
+          <div className="teamPixelBoard" aria-hidden="true">
+            {Array.from({ length: 25 }).map((_, index) => (
+              <span key={index} />
+            ))}
+          </div>
+          <div className="teamRole roleDevelopment">
+            <Code2 size={20} aria-hidden="true" />
+            <span>Desarrollo</span>
+          </div>
+          <div className="teamRole roleDesign">
+            <Palette size={20} aria-hidden="true" />
+            <span>Diseño gráfico</span>
+          </div>
+          <div className="teamRole rolePhoto">
+            <Camera size={20} aria-hidden="true" />
+            <span>Fotografía</span>
+          </div>
+          <div className="teamRole roleVideo">
+            <Plane size={20} aria-hidden="true" />
+            <span>Video y dron</span>
           </div>
         </div>
 
         <div className="aboutCopy">
-          <p className="sectionKicker">Acerca de mí</p>
-          <h2>Soy Juan Pablo Saráchaga, el desarrollador detrás de Juntando Pixels.</h2>
+          <p className="sectionKicker">Equipo</p>
+          <h2>Un equipo heterogéneo para mirar cada proyecto desde varios frentes.</h2>
           <p className="sectionText">
-            Trabajo en proyectos web, eCommerce y soluciones digitales combinando
-            mirada técnica, criterio visual y acompañamiento cercano. Me involucro
-            desde la idea inicial hasta la publicación, para que cada sitio o sistema
-            quede claro, usable y preparado para crecer.
+            En Juntando Pixels reunimos desarrolladores especializados,
+            diseñadores gráficos, fotógrafos y equipo de video para abordar cada
+            proyecto de forma integral. Lo técnico, lo visual y lo narrativo se
+            trabajan juntos desde el inicio, no como capas separadas al final.
           </p>
-          <div className="aboutHighlights" aria-label="Formas de trabajo">
+          <p className="sectionText">
+            Trabajamos con fotografía institucional, fotografía de marca,
+            contenido para social media, video y tomas con dron. Sumamos las
+            piezas necesarias según el objetivo: lanzamiento, comunicación de
+            servicios, catálogo comercial o campaña puntual.
+          </p>
+          <div className="aboutHighlights" aria-label="Especialidades del equipo">
             <span>
-              <Rocket size={17} aria-hidden="true" />
-              Desarrollo a medida
+              <Code2 size={17} aria-hidden="true" />
+              Desarrollo especializado
             </span>
             <span>
-              <Handshake size={17} aria-hidden="true" />
-              Trabajo con agencias
+              <Brush size={17} aria-hidden="true" />
+              Diseño gráfico
             </span>
             <span>
-              <Wrench size={17} aria-hidden="true" />
-              Soporte y mejoras
+              <Camera size={17} aria-hidden="true" />
+              Fotografía de marca
+            </span>
+            <span>
+              <Plane size={17} aria-hidden="true" />
+              Video, social media y dron
             </span>
           </div>
         </div>
@@ -431,13 +456,13 @@ function Projects() {
     <section className="section projectsSection" id="proyectos">
       <div className="container">
         <div className="sectionHeader">
-          <p className="sectionKicker">Productos digitales que ya construimos</p>
-          <h2>Experiencia aplicada en sitios, tiendas y soporte técnico web.</h2>
+          <p className="sectionKicker">Trabajos realizados</p>
+          <h2>Casos donde combinamos criterio técnico y salida a producción.</h2>
           <p>
             Algunos desarrollos fueron realizados por Juntando Pixels de forma directa
             y otros en colaboración con agencias o equipos que nos convocaron como
-            desarrollo técnico. En todos los casos, el foco estuvo en construir
-            soluciones claras, estables y listas para salir a producción.
+            desarrollo técnico. El foco estuvo en resolver requerimientos concretos,
+            cuidar la experiencia y publicar sin perder orden.
           </p>
         </div>
 
@@ -477,7 +502,7 @@ function Projects() {
         <div className="secondaryProjects">
           <div>
             <p className="sectionKicker">También trabajamos en</p>
-            <h3>Más experiencia web y digital.</h3>
+            <h3>Más proyectos y colaboraciones.</h3>
           </div>
           <div className="secondaryProjectGrid">
             {secondaryProjects.map((project) => (
@@ -517,13 +542,12 @@ function ProductModules() {
     <section className="section modulesSection">
       <div className="container modulesGrid">
         <div>
-          <p className="sectionKicker">No solo hacemos webs</p>
-          <h2>Sumamos las piezas necesarias según cada proyecto.</h2>
+          <p className="sectionKicker">Capacidades</p>
+          <h2>Un mapa rápido de lo que podemos sumar.</h2>
           <p className="sectionText">
-            Un sitio web no vive solo. Muchas veces necesita fotos, videos,
-            textos, identidad, estrategia, formularios, hosting, dominios,
-            integraciones y mantenimiento. Por eso Juntando Pixels trabaja como
-            un equipo modular.
+            Podés convocarnos para una entrega puntual o para acompañar todo el
+            proceso. Estas son las áreas que solemos combinar cuando el proyecto
+            lo pide.
           </p>
         </div>
         <div className="moduleList">
@@ -594,10 +618,10 @@ function FinalCta() {
       <div className="container finalCtaGrid">
         <div>
           <p className="sectionKicker">Contacto</p>
-          <h2>¿Tenés una web, tienda o sistema en mente?</h2>
+          <h2>Contanos qué necesitás y armamos el próximo paso.</h2>
           <p>
-            Podemos ayudarte a convertirlo en un producto digital concreto:
-            diseñado, desarrollado, publicado y listo para crecer.
+            Revisamos la idea, el estado actual y el objetivo para proponerte un
+            camino claro antes de empezar a producir.
           </p>
         </div>
         <div className="finalCtaActions">
@@ -622,7 +646,13 @@ function Footer() {
     <footer className="footer">
       <div className="container footerGrid">
         <div>
-          <Image src={logo} alt="Juntando Pixels" width={142} height={71} className="footerLogo" />
+          <Image
+            src="/juntando-pixels-logo-clean.png"
+            alt="Juntando Pixels"
+            width={172}
+            height={100}
+            className="footerLogo"
+          />
           <p>Desarrollo web, eCommerce, software y contenido digital desde La Plata.</p>
         </div>
         <div>
