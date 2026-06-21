@@ -46,8 +46,8 @@ const services = [
   },
   {
     icon: Cpu,
-    title: "Sistemas y soluciones a medida",
-    text: "Construimos herramientas digitales pensadas para resolver procesos concretos, automatizar tareas o mejorar la gestión interna."
+    title: "Aplicaciones y productos a medida",
+    text: "Diseñamos aplicaciones web, paneles internos, herramientas de gestión y productos digitales personalizados para procesos que no entran en una plantilla."
   },
   {
     icon: SearchCheck,
@@ -118,6 +118,7 @@ const secondaryProjects = [
 ];
 
 const modules = [
+  { icon: Cpu, label: "Aplicaciones a medida" },
   { icon: Code2, label: "Desarrollo" },
   { icon: Brush, label: "Diseño" },
   { icon: Sparkles, label: "Contenido" },
@@ -135,11 +136,11 @@ const process = [
   },
   {
     title: "Definimos la solución",
-    text: "Elegimos la tecnología y la estructura adecuada: Next.js, WordPress, WooCommerce o una solución a medida."
+    text: "Elegimos la arquitectura adecuada: sitio, tienda, panel interno, aplicación web o producto personalizado."
   },
   {
     title: "Diseñamos y desarrollamos",
-    text: "Construimos una experiencia clara, responsive y fácil de administrar cuando el proyecto lo requiere."
+    text: "Construimos una experiencia clara, responsive y fácil de usar, con foco en flujos reales y crecimiento futuro."
   },
   {
     title: "Publicamos y ajustamos",
@@ -156,6 +157,8 @@ const technologies = [
   "React",
   "TypeScript",
   "JavaScript",
+  "Aplicaciones web",
+  "Productos a medida",
   "WordPress",
   "WooCommerce",
   "Node.js",
@@ -199,7 +202,7 @@ function JsonLd() {
     url: "https://juntandopixels.com/",
     email,
     description:
-      "Consultora digital de La Plata orientada a desarrollo web, eCommerce, software, diseño, contenido audiovisual, fotografía, drones y soluciones digitales.",
+      "Consultora digital de La Plata orientada a aplicaciones web, productos digitales personalizados, desarrollo web, eCommerce, software, diseño y contenido audiovisual.",
     areaServed: [
       "La Plata",
       "Buenos Aires",
@@ -218,6 +221,8 @@ function JsonLd() {
     serviceType: [
       "Desarrollo web",
       "Programacion web",
+      "Aplicaciones web",
+      "Productos digitales personalizados",
       "Tiendas online",
       "eCommerce",
       "Software a medida",
@@ -228,6 +233,10 @@ function JsonLd() {
       "JuntandoPixels",
       "juntando pixels",
       "juntando pixeles",
+      "aplicaciones web",
+      "productos digitales personalizados",
+      "productos digitales a medida",
+      "software personalizado",
       "desarrollo web",
       "desarrollo web La Plata",
       "desarrollo web la plata buenos aires",
@@ -305,12 +314,12 @@ function Hero() {
 
       <div className="container heroGrid">
         <div className="heroCopy">
-          <p className="eyebrow">La Plata · web, marca y contenido</p>
-          <h1>Presencia digital clara para marcas que quieren crecer</h1>
+          <p className="eyebrow">La Plata · aplicaciones, web y marca</p>
+          <h1>Productos digitales a medida para ideas que necesitan forma</h1>
           <p className="heroLead">
-            Creamos experiencias online que combinan desarrollo, diseño y
-            producción visual para que tu negocio se vea profesional, cargue
-            rápido y convierta mejor.
+            Diseñamos y desarrollamos aplicaciones, sitios y herramientas
+            personalizadas que ordenan procesos, mejoran la experiencia y ayudan
+            a que tu negocio crezca con una base digital propia.
           </p>
           <div className="heroActions">
             <a className="button primary" href={projectFormHref}>
@@ -358,11 +367,11 @@ function Services() {
       <div className="container">
         <div className="sectionHeader">
           <p className="sectionKicker">Qué hacemos</p>
-          <h2>Elegimos la herramienta correcta para cada objetivo.</h2>
+          <h2>Convertimos necesidades concretas en productos digitales usables.</h2>
           <p>
-            Una marca puede necesitar vender, mostrar trayectoria, ordenar
-            consultas o mejorar un sitio existente. Partimos de esa necesidad y
-            armamos una solución posible de mantener.
+            Podés necesitar una web, una tienda, un panel de gestión, una
+            aplicación interna o una plataforma pensada desde cero. Partimos del
+            problema y elegimos el formato que mejor lo resuelve.
           </p>
         </div>
         <div className="serviceGrid">
@@ -418,8 +427,8 @@ function About() {
           <p className="sectionText">
             En Juntando Pixels reunimos desarrolladores especializados,
             diseñadores gráficos, fotógrafos y equipo de video para abordar cada
-            proyecto de forma integral. Lo técnico, lo visual y lo narrativo se
-            trabajan juntos desde el inicio, no como capas separadas al final.
+            proyecto de forma integral. Cuando la idea pide algo propio, pensamos
+            producto, interfaz, contenido y desarrollo desde el inicio.
           </p>
           <p className="sectionText">
             Trabajamos con fotografía institucional, fotografía de marca,
@@ -543,11 +552,11 @@ function ProductModules() {
       <div className="container modulesGrid">
         <div>
           <p className="sectionKicker">Capacidades</p>
-          <h2>Un mapa rápido de lo que podemos sumar.</h2>
+          <h2>Un mapa rápido de lo que podemos construir o sumar.</h2>
           <p className="sectionText">
-            Podés convocarnos para una entrega puntual o para acompañar todo el
-            proceso. Estas son las áreas que solemos combinar cuando el proyecto
-            lo pide.
+            Podemos acompañar una entrega puntual o desarrollar un producto desde
+            cero: desde la idea funcional hasta la interfaz, el contenido, la
+            publicación y las mejoras posteriores.
           </p>
         </div>
         <div className="moduleList">
@@ -600,7 +609,7 @@ function Technologies() {
       <div className="container">
         <div className="sectionHeader compactHeader">
           <p className="sectionKicker">Tecnologías</p>
-          <h2>Herramientas que usamos según el producto.</h2>
+          <h2>Tecnologías y capacidades según el producto.</h2>
         </div>
         <div className="techList" aria-label="Tecnologías y áreas de trabajo">
           {technologies.map((tech) => (
@@ -618,10 +627,10 @@ function FinalCta() {
       <div className="container finalCtaGrid">
         <div>
           <p className="sectionKicker">Contacto</p>
-          <h2>Contanos qué necesitás y armamos el próximo paso.</h2>
+          <h2>¿Tenés una aplicación o producto digital en mente?</h2>
           <p>
-            Revisamos la idea, el estado actual y el objetivo para proponerte un
-            camino claro antes de empezar a producir.
+            Revisamos la idea, el estado actual y el objetivo para bajar el
+            producto a pantallas, funcionalidades y un plan de desarrollo claro.
           </p>
         </div>
         <div className="finalCtaActions">
@@ -653,7 +662,7 @@ function Footer() {
             height={100}
             className="footerLogo"
           />
-          <p>Desarrollo web, eCommerce, software y contenido digital desde La Plata.</p>
+          <p>Aplicaciones, desarrollo web, eCommerce, software y contenido digital desde La Plata.</p>
         </div>
         <div>
           <h3>Links</h3>
@@ -677,7 +686,7 @@ function Footer() {
       </div>
       <div className="container footerBottom">
         <span>© {year} Juntando Pixels.</span>
-        <span>Impulsado por Juan Pablo Saráchaga.</span>
+        <span>Aplicaciones, web y contenido digital.</span>
       </div>
     </footer>
   );

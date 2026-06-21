@@ -7,15 +7,20 @@ const siteUrl = "https://juntandopixels.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title:
-    "Desarrollo web en La Plata, Buenos Aires | Juntando Pixels",
+    "Aplicaciones y desarrollo web en La Plata | Juntando Pixels",
   description:
-    "Desarrollo web, programacion, tiendas online y soluciones digitales en La Plata, Buenos Aires. Creamos sitios rapidos, profesionales y listos para crecer.",
+    "Desarrollo de aplicaciones, productos digitales personalizados, sitios web y tiendas online en La Plata, Buenos Aires.",
   keywords: [
     "Juntando Pixels",
     "JuntandoPixels",
     "juntando pixels",
     "juntando pixeles",
     "desarrollo web La Plata",
+    "aplicaciones web La Plata",
+    "desarrollo de aplicaciones La Plata",
+    "productos digitales personalizados",
+    "productos digitales a medida",
+    "software personalizado La Plata",
     "desarrollo web la plata buenos aires",
     "programacion La Plata Buenos Aires",
     "programacion la plata buenos aires",
@@ -28,6 +33,7 @@ export const metadata: Metadata = {
     "eCommerce",
     "tiendas online",
     "software a medida",
+    "aplicaciones a medida",
     "diseño UI UX",
     "fotografía",
     "drones",
@@ -43,13 +49,29 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Juntando Pixels | Desarrollo web en La Plata, Buenos Aires",
+      "Juntando Pixels | Aplicaciones y desarrollo web en La Plata",
     description:
-      "Desarrollo web, programacion, eCommerce y soluciones digitales para empresas y profesionales de La Plata, Buenos Aires.",
+      "Desarrollo de aplicaciones, productos digitales personalizados, eCommerce y sitios web para empresas y profesionales.",
     url: siteUrl,
     siteName: "Juntando Pixels",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Juntando Pixels - Aplicaciones, desarrollo web y productos digitales"
+      }
+    ],
     type: "website",
     locale: "es_AR"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Juntando Pixels | Aplicaciones y desarrollo web en La Plata",
+    description:
+      "Desarrollo de aplicaciones, productos digitales personalizados, eCommerce y sitios web para empresas y profesionales.",
+    images: ["/opengraph-image.png"]
   },
   robots: {
     index: true,

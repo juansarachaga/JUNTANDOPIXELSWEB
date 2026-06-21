@@ -14,6 +14,8 @@ type MailDraft = {
 };
 
 const projectTypes = [
+  "Aplicación web / producto a medida",
+  "Panel de gestión interno",
   "Sitio institucional",
   "Tienda online / eCommerce",
   "Landing page",
@@ -23,6 +25,9 @@ const projectTypes = [
 ];
 
 const needs = [
+  "Aplicación personalizada",
+  "Panel o dashboard",
+  "Automatización de procesos",
   "Tienda online",
   "Iconografía o identidad visual",
   "Fotos propias",
@@ -67,14 +72,14 @@ export default function ContactForm({ email }: ContactFormProps) {
     const timeline = String(formData.get("timeline") || "").trim();
     const message = String(formData.get("message") || "").trim();
 
-    const subject = `Consulta web - ${name || "Nuevo proyecto"}`;
+    const subject = `Consulta digital - ${name || "Nuevo proyecto"}`;
     const body = [
       "Hola Juntando Pixels, quiero consultar por un proyecto.",
       "",
       `Nombre: ${name || "-"}`,
       `Email: ${clientEmail || "-"}`,
       `Teléfono / WhatsApp: ${phone || "-"}`,
-      `Tipo de web: ${projectType || "-"}`,
+      `Tipo de proyecto: ${projectType || "-"}`,
       `Necesidades: ${selectedNeeds.length ? selectedNeeds.join(", ") : "-"}`,
       `Plazo ideal: ${timeline || "-"}`,
       "",
@@ -121,7 +126,7 @@ export default function ContactForm({ email }: ContactFormProps) {
           <input name="phone" type="tel" autoComplete="tel" />
         </label>
         <label>
-          <span>Tipo de web</span>
+          <span>Tipo de proyecto</span>
           <select name="projectType" defaultValue="" required>
             <option value="" disabled>
               Seleccionar
