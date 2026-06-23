@@ -29,6 +29,7 @@ const navItems = [
   { label: "Qué hacemos", href: "#servicios" },
   { label: "Aplicaciones", href: "#aplicaciones" },
   { label: "Equipo", href: "#acerca" },
+  { label: "Nombre", href: "#nombre" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Proceso", href: "#proceso" },
   { label: "Contacto", href: "#contacto" }
@@ -190,6 +191,7 @@ export default function Home() {
       <Services />
       <CustomProducts />
       <About />
+      <NameStory />
       <Projects />
       <ProductModules />
       <WorkProcess />
@@ -532,6 +534,50 @@ function About() {
               Video, social media y dron
             </span>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NameStory() {
+  return (
+    <section className="section nameStorySection" id="nombre">
+      <div className="container nameStoryGrid">
+        <div className="nameStoryCopy">
+          <p className="sectionKicker">El nombre</p>
+          <h2>&iquest;Por qu&eacute; Juntando Pixels y no Juntando P&iacute;xeles?</h2>
+          <p className="sectionText">
+            La respuesta corta es simple: porque nos gust&oacute; m&aacute;s.
+          </p>
+          <p className="sectionText">
+            La respuesta larga tiene un poco m&aacute;s de intenci&oacute;n. Desde el
+            principio quisimos un nombre que sonara moderno, cercano y con una
+            mirada m&aacute;s amplia. <strong>Pixels</strong> tiene ese toque
+            spanglish que representa bastante bien lo que somos: una idea nacida
+            ac&aacute;, pero pensada para moverse sin tantas fronteras.
+          </p>
+          <p className="sectionText">
+            Adem&aacute;s, un pixel solo parece poca cosa. Pero cuando muchos se
+            juntan, aparece una imagen. Con las ideas pasa algo parecido: a
+            veces todo empieza con algo m&iacute;nimo, casi invisible, hasta que
+            se ordena, toma forma y termina contando algo.
+          </p>
+          <p className="nameStoryPunch">
+            Y s&iacute;, tambi&eacute;n hay que decirlo:{" "}
+            <strong>Juntando Pixels suena mejor</strong>.
+          </p>
+        </div>
+
+        <div className="nameStoryImageWrap">
+          <Image
+            src="/name-story-pixels.png"
+            alt="Globo aerostatico construido con pixels de colores"
+            width={666}
+            height={375}
+            sizes="(max-width: 1050px) calc(100vw - 40px), 430px"
+            className="nameStoryImage"
+          />
         </div>
       </div>
     </section>

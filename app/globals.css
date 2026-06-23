@@ -708,6 +708,69 @@ h2 {
   flex: 0 0 auto;
 }
 
+.nameStorySection {
+  background:
+    radial-gradient(circle at 20% 28%, rgba(255, 181, 61, 0.12), transparent 24%),
+    radial-gradient(circle at 84% 66%, rgba(58, 216, 255, 0.11), transparent 28%),
+    #090d17;
+}
+
+.nameStoryGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.78fr);
+  gap: 58px;
+  align-items: center;
+}
+
+.nameStoryCopy {
+  min-width: 0;
+}
+
+.nameStoryCopy h2 {
+  max-width: 840px;
+}
+
+.nameStoryCopy strong {
+  color: var(--ink);
+}
+
+.nameStoryPunch {
+  position: relative;
+  margin: 28px 0 0;
+  border-left: 4px solid var(--amber);
+  padding: 12px 0 12px 18px;
+  color: var(--ink);
+  font-size: clamp(1.22rem, 2.2vw, 1.68rem);
+  font-weight: 850;
+  line-height: 1.38;
+}
+
+.nameStoryPunch::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  bottom: 0;
+  width: 92px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--amber), var(--cyan));
+}
+
+.nameStoryImageWrap {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  aspect-ratio: 1672 / 941;
+  filter: drop-shadow(0 28px 54px rgba(0, 0, 0, 0.26));
+}
+
+.nameStoryImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .sectionText,
 .finalCta p {
   color: var(--muted);
@@ -1784,6 +1847,7 @@ h2 {
   .heroGrid,
   .aboutGrid,
   .customProductsGrid,
+  .nameStoryGrid,
   .processGrid,
   .finalCtaGrid {
     grid-template-columns: 1fr;
@@ -1884,6 +1948,10 @@ h2 {
 
   .aboutTeamVisual {
     min-height: 340px;
+  }
+
+  .nameStoryImageWrap {
+    max-width: 720px;
   }
 
   .teamPixelBoard {
@@ -2078,6 +2146,14 @@ h2 {
 
   .heroVisual {
     min-height: 280px;
+  }
+
+  .nameStoryImageWrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .nameStoryImage {
+    object-position: 58% center;
   }
 
   .productChips span {
