@@ -425,9 +425,7 @@ h2 {
   width: min(88%, 520px);
   height: auto;
   border-radius: 0;
-  filter:
-    drop-shadow(0 3px 0 rgba(255, 255, 255, 0.36))
-    drop-shadow(0 26px 52px rgba(0, 0, 0, 0.32));
+  filter: drop-shadow(0 24px 46px rgba(0, 0, 0, 0.3));
 }
 
 .orbitCard {
@@ -1715,6 +1713,53 @@ h2 {
 .projectForm button {
   border: 0;
   cursor: pointer;
+}
+
+.projectForm button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
+
+.formStatus {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.055);
+  color: var(--muted);
+  font-size: 0.94rem;
+  font-weight: 720;
+  line-height: 1.45;
+}
+
+.formStatus svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+
+.formStatus.sent {
+  border-color: rgba(53, 212, 106, 0.28);
+  background: rgba(53, 212, 106, 0.1);
+  color: var(--ink);
+}
+
+.formStatus.sent svg {
+  color: var(--green);
+}
+
+.formStatus.fallback,
+.formStatus.error {
+  border-color: rgba(255, 181, 61, 0.3);
+  background: rgba(255, 181, 61, 0.09);
+  color: var(--ink);
+}
+
+.formStatus.fallback svg,
+.formStatus.error svg {
+  color: var(--amber);
 }
 
 .formResult {

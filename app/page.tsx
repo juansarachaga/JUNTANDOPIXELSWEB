@@ -29,7 +29,6 @@ const navItems = [
   { label: "Qué hacemos", href: "#servicios" },
   { label: "Aplicaciones", href: "#aplicaciones" },
   { label: "Equipo", href: "#acerca" },
-  { label: "Nombre", href: "#nombre" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Proceso", href: "#proceso" },
   { label: "Contacto", href: "#contacto" }
@@ -348,11 +347,11 @@ function Hero() {
 
         <div className="heroVisual" aria-label="Identidad visual de Juntando Pixels">
           <Image
-            src="/juntando-pixels-logo-clean.png"
+            src="/juntando-pixels-hero-logo-final-clean-v2.png"
             alt="Juntando Pixels"
             priority
-            width={1223}
-            height={710}
+            width={1536}
+            height={867}
             sizes="(max-width: 900px) 86vw, 520px"
             className="heroLogo"
           />

@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { CheckCircle2, Clipboard, Mail, Send } from "lucide-react";
+import { AlertCircle, CheckCircle2, Clipboard, Mail, Send } from "lucide-react";
 
 type ContactFormProps = {
   email: string;
@@ -12,6 +12,8 @@ type MailDraft = {
   body: string;
   href: string;
 };
+
+type SubmitStatus = "idle" | "sending" | "sent" | "fallback" | "error";
 
 const projectTypes = [
   "Aplicación web / producto a medida",
@@ -42,6 +44,8 @@ export default function ContactForm({ email }: ContactFormProps) {
   const [selectedNeeds, setSelectedNeeds] = useState<string[]>([]);
   const [draft, setDraft] = useState<MailDraft | null>(null);
   const [copied, setCopied] = useState(false);
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [statusMessage, setStatusMessage] = useState("");
 
   function toggleNeed(need: string) {
     setSelectedNeeds((current) =>
@@ -61,7 +65,7 @@ export default function ContactForm({ email }: ContactFormProps) {
     window.setTimeout(() => setCopied(false), 2200);
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
@@ -95,7 +99,57 @@ export default function ContactForm({ email }: ContactFormProps) {
 
     setDraft({ subject, body, href });
     setCopied(false);
-    window.location.href = href;
+    setStatus("sending");
+    setStatusMessage("Enviando consulta...");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name,
+          email: clientEmail,
+          phone,
+          projectType,
+          needs: selectedNeeds,
+          timeline,
+          message,
+          subject,
+          body
+        })
+      });
+
+      const result = (await response.json()) as {
+        ok?: boolean;
+        fallback?: boolean;
+        message?: string;
+      };
+
+      if (response.ok && result.ok) {
+        setStatus("sent");
+        setStatusMessage("Consulta enviada. Te vamos a responder por email o WhatsApp.");
+        return;
+      }
+
+      if (result.fallback) {
+        setStatus("fallback");
+        setStatusMessage("No pudimos enviarlo automático. Te abrimos el email armado para mandarlo con un toque.");
+        window.location.href = href;
+        return;
+      }
+
+      setStatus("error");
+      setStatusMessage(
+        result.message ||
+          "No pudimos enviar la consulta directo. Podés abrir el email o copiar el mensaje."
+      );
+    } catch {
+      setStatus("fallback");
+      setStatusMessage("No pudimos conectar con el envío directo. Te abrimos el email como respaldo.");
+      window.location.href = href;
+    }
   }
 
   return (
@@ -172,8 +226,8 @@ export default function ContactForm({ email }: ContactFormProps) {
       </label>
 
       <div className="formActions">
-        <button className="button primary" type="submit">
-          Armar consulta
+        <button className="button primary" type="submit" disabled={status === "sending"}>
+          {status === "sending" ? "Enviando..." : "Enviar consulta"}
           <Send size={18} aria-hidden="true" />
         </button>
         <a className="button secondaryDark" href={`mailto:${email}`}>
@@ -182,13 +236,24 @@ export default function ContactForm({ email }: ContactFormProps) {
         </a>
       </div>
 
-      {draft ? (
+      {status !== "idle" ? (
+        <div className={`formStatus ${status}`} aria-live="polite">
+          {status === "sent" ? (
+            <CheckCircle2 size={20} aria-hidden="true" />
+          ) : (
+            <AlertCircle size={20} aria-hidden="true" />
+          )}
+          <span>{statusMessage}</span>
+        </div>
+      ) : null}
+
+      {draft && status !== "sent" ? (
         <div className="formResult" aria-live="polite">
           <div className="formResultHeader">
             <CheckCircle2 size={20} aria-hidden="true" />
             <div>
-              <strong>Consulta lista para enviar</strong>
-              <span>Si no se abrió tu correo, copiá el mensaje y mandalo a {email}.</span>
+              <strong>Consulta lista como respaldo</strong>
+              <span>Si no se envió directo o no se abrió tu correo, copiá el mensaje y mandalo a {email}.</span>
             </div>
           </div>
           <textarea readOnly value={draft.body} rows={8} aria-label="Consulta generada" />
